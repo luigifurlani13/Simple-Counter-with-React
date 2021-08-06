@@ -15,15 +15,17 @@ export const Counter = props => {
 	).split("");
 	output.unshift(icon);
 
-	let result = output.map((item, i) => {
-		return (
-			<div className="box" key={i}>
-				{item}
-			</div>
-		);
-	});
-
-	return <div>{result}</div>;
+	return (
+		<div className="outter">
+			{output.map((item, i) => {
+				return (
+					<div className="box" key={i}>
+						{item}
+					</div>
+				);
+			})}
+		</div>
+	);
 };
 
 Counter.propTypes = {
