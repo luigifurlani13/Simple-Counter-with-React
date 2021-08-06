@@ -16,7 +16,7 @@ import { Counter } from "./component/Counter.js";
 let secs = 1;
 
 const interval = setInterval(() => {
-	if (secs == 100) {
+	if (secs == 999999) {
 		clearInterval(interval);
 	}
 	ReactDOM.render(<Counter seconds={secs} />, document.querySelector("#app"));

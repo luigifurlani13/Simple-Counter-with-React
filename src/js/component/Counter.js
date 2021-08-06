@@ -3,13 +3,27 @@ import PropTypes from "prop-types";
 
 export const Counter = props => {
 	let placeholder = "000000";
-	// let output = placeholder + props.seconds;
 
-	let length = props.seconds.length;
+	let seconds = props.seconds.toString();
+	let icon = <i className="far fa-clock"></i>;
 
-	let output = placeholder.split("").slice(length);
+	let output = (
+		placeholder
+			.split("")
+			.slice(seconds.length)
+			.join("") + seconds
+	).split("");
+	output.unshift(icon);
 
-	return <div>{output}</div>;
+	let result = output.map((item, i) => {
+		return (
+			<div className="box" key={i}>
+				{item}
+			</div>
+		);
+	});
+
+	return <div>{result}</div>;
 };
 
 Counter.propTypes = {
